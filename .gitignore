@@ -24,6 +24,7 @@ coverage
 build/Release
 
 # Dependency directories
+dist
 node_modules
 bower_components
 jspm_packages
