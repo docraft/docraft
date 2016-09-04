@@ -12,7 +12,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.14.3",
     "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
     "gulp-pug": "^3.0.4",
     "gulp-sass": "^2.3.2"
   }

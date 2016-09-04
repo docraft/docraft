@@ -2,7 +2,9 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var pug  = require('gulp-pug');
+var pug = require('gulp-pug');
+var connect = require('gulp-connect');
+var sync = require('browser-sync').create();
 
 
 // sass
@@ -19,7 +21,21 @@ gulp.task('pug', function(){
         .pipe(gulp.dest('webroot/dist/html'))
 });
 
-// default
-gulp.task('default', function(){
-    console.log('default');
+// sync
+gulp.task('sync', function(){
+    sync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
 });
+
+// server
+gulp.task('server', function(){
+    connect.server({
+        livereload: true
+    });
+});
+
+// default
+gulp.task('default', ['sass', 'pug']);
